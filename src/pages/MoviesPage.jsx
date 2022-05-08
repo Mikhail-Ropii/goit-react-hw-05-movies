@@ -9,6 +9,7 @@ export default function MoviesPage() {
   const [searchValue, setSearchValue] = useState('');
   const [searchParams, setSearchParams] = useSearchParams({});
   const location = useLocation();
+  console.log(searchParams);
 
   const onSearchChange = e => {
     setSearchValue(e.currentTarget.value);
