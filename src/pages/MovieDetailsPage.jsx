@@ -14,7 +14,6 @@ export default function MovieDetailsPage() {
   const navigate = useNavigate();
   const { movieId } = useParams();
   const [filmDetails, setFilmDetails] = useState(null);
-  console.log(location);
 
   useEffect(() => {
     async function fetchDetails() {
@@ -27,6 +26,10 @@ export default function MovieDetailsPage() {
   }, [movieId]);
 
   const onGoBack = () => {
+    if (!location.state) {
+      navigate('/');
+      return;
+    }
     navigate(location.state.from);
   };
 
@@ -40,10 +43,14 @@ export default function MovieDetailsPage() {
       <h4>Additional information</h4>
       <ul>
         <li>
-          <NavLink to="cast">Cast</NavLink>
+          <NavLink to="cast" state={{ from: location }}>
+            Cast
+          </NavLink>
         </li>
         <li>
-          <NavLink to="reviews">Reviews</NavLink>
+          <NavLink to="reviews" state={{ from: location }}>
+            Reviews
+          </NavLink>
         </li>
       </ul>
       <hr></hr>
