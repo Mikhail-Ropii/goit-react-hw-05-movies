@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
 const PopularFilmList = ({ filmsList }) => {
@@ -13,6 +14,10 @@ const PopularFilmList = ({ filmsList }) => {
       ))}
     </ul>
   );
+};
+
+PopularFilmList.propTypes = {
+  filmsList: propTypes.object,
 };
 
 export default PopularFilmList;

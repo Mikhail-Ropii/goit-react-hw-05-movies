@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 const CastCard = ({ cast }) => {
   return (
     <ul>
@@ -18,6 +20,10 @@ const CastCard = ({ cast }) => {
       ))}
     </ul>
   );
+};
+
+CastCard.propTypes = {
+  cast: propTypes.object,
 };
 
 export default CastCard;

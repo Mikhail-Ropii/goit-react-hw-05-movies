@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import css from '../styles.module.css';
 
 const FilmCards = ({ filmDetails }) => {
@@ -24,6 +25,10 @@ const FilmCards = ({ filmDetails }) => {
       </div>
     </div>
   );
+};
+
+FilmCards.propTypes = {
+  filmDetails: propTypes.object,
 };
 
 export default FilmCards;
