@@ -17,6 +17,11 @@ export default function MoviesPage() {
 
   const onSeachFilms = e => {
     e.preventDefault();
+    if (searchValue.trim() === '') {
+      toast.warn('Enter movie name');
+      setSearchValue('');
+      return;
+    }
     setSearchParams({ query: searchValue.toLowerCase().trim() });
     setSearchValue('');
   };
